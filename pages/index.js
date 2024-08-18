@@ -40,12 +40,12 @@ export default function Home() {
           </Text>
           <ButtonGroup mt="10px">
             <Stack direction={["column", "row"]}>
-              <a href="/resume.pdf" target="_blank">
+              <Link href="/resume.pdf" target="_blank">
                 <Button gap="5px" _hover={{ bg: "blue.300", color: "black" }}>
                   Resume
                   <MdOutlinePerson />
                 </Button>
-              </a>
+              </Link>
               <Link href="https://www.linkedin.com/in/tarkan-zarrouk" target="_blank">
                 <Button gap="5px" _hover={{ bg: "blue.300", color: "black" }}>
                   Connect With Me

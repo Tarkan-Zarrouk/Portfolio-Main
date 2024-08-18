@@ -9,7 +9,6 @@ function PageNotFound() {
         <div>
             <VStack>
                 <Box>
-
                     <Image width={1200} src={nopage} />
                 </Box>
                 <Box>

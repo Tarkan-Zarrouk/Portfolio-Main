@@ -1,9 +1,9 @@
+"use client"
 import {
     Box,
     Flex,
     Link,
     Spacer,
-    IconButton,
     Text,
     Menu,
     MenuButton,
@@ -13,12 +13,9 @@ import {
 import { HamburgerIcon } from "@chakra-ui/icons";
 import NavIcon from "@/public/NavBarBrandIcon.png";
 import Image from "next/image";
-import { useRouter } from "next/router";
-
 
 
 export default function NavigationMenu() {
-    const router = useRouter();
 
     return (
         <div>
@@ -53,12 +50,8 @@ export default function NavigationMenu() {
                     </Link>
                 </Box>
                 <Menu>
-                    <MenuButton>
-                        <IconButton
-                            aria-label="Open Menu"
-                            icon={<HamburgerIcon />}
-                            display={["flex", "flex", "none", "none"]}
-                        />
+                    <MenuButton display={["flex", "none", "none", "none"]}>
+                        <HamburgerIcon />
                     </MenuButton>
                     <MenuList>
                         <MenuItem>Home</MenuItem>
