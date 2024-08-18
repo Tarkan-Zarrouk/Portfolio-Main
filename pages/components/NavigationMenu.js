@@ -30,8 +30,8 @@ export default function NavigationMenu() {
     return (
         <div>
             <Flex
-                px={["1rem", "2rem", "5rem"]}
-                py={["1rem", "1.5rem", "2rem"]}
+                px={["0rem", "2rem", "5rem"]}
+                py={["0rem", "1.5rem", "2rem"]}
                 minH="60px"
                 alignItems="center"
             >
@@ -49,12 +49,12 @@ export default function NavigationMenu() {
                     display={["flex", "flex"]}
                 >
                     <Link mr="40px" onClick={() => router.push("/")}>
-                        <Text fontSize="lg" color="#7e9199">
+                        <Text fontSize={["sm", "lg"]} color="#7e9199">
                             Home
                         </Text>
                     </Link>
                     <Link mr="40px" onClick={() => router.push("/Skills")}>
-                        <Text fontSize="lg" color="#7e9199">
+                        <Text fontSize={["sm", "lg"]} color="#7e9199">
                             Skills
                         </Text>
                     </Link>
