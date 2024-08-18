@@ -4,28 +4,21 @@ import {
     Link,
     Spacer,
     IconButton,
-    Drawer,
-    DrawerBody,
-    DrawerHeader,
-    DrawerOverlay,
-    DrawerContent,
-    DrawerCloseButton,
-    useDisclosure,
-    HStack,
-    Button,
     Text,
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import NavIcon from "@/public/NavBarBrandIcon.png";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { FaGithub, FaLinkedin, FaStackOverflow } from "react-icons/fa";
 
 
 
 export default function NavigationMenu() {
     const router = useRouter();
-    const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
         <div>
@@ -46,20 +39,32 @@ export default function NavigationMenu() {
                 </Box>
                 <Spacer />
                 <Box
-                    display={["flex", "flex"]}
+                    display={["none", "flex", "flex"]}
                 >
-                    <Link mr="40px" onClick={() => router.push("/")}>
+                    <Link mr="40px">
                         <Text fontSize={["sm", "lg"]} color="#7e9199">
                             Home
                         </Text>
                     </Link>
-                    <Link mr="40px" onClick={() => router.push("/Skills")}>
+                    <Link mr="40px">
                         <Text fontSize={["sm", "lg"]} color="#7e9199">
                             Skills
                         </Text>
                     </Link>
                 </Box>
-
+                <Menu>
+                    <MenuButton>
+                        <IconButton
+                            aria-label="Open Menu"
+                            icon={<HamburgerIcon />}
+                            display={["flex", "flex", "none", "none"]}
+                        />
+                    </MenuButton>
+                    <MenuList>
+                        <MenuItem>Home</MenuItem>
+                        <MenuItem>Skills</MenuItem>
+                    </MenuList>
+                </Menu>
             </Flex>
         </div>
     );
