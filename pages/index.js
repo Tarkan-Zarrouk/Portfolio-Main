@@ -17,6 +17,8 @@ import SassIcon from "@/public/sass_icon.png";
 import WindowsIcon from "@/public/windows_icon.png";
 import PopOsIcon from "@/public/popos_icon.png";
 import MacIosOS from "@/public/macosios_icon.png";
+import VsCodeIcon from "@/public/vscode_icon.png";
+import IntellijIcon from "@/public/intellij_icon.png";
 
 
 export default function Home() {
@@ -142,6 +144,16 @@ export default function Home() {
               <Tooltip hasArrow label="iOS & MacOS From 2018 - Present & 2024 - Present" placement="bottom" borderRadius="1rem">
                 <Button mt="1rem" borderRadius="50%" height="4rem" width="auto" bg="white" ml="10px">
                   <Image src={MacIosOS} width="40" />
+                </Button>
+              </Tooltip>
+              <Tooltip hasArrow label="VSCode From 2022 - Present" placement="bottom" borderRadius="1rem">
+                <Button mt="1rem" borderRadius="50%" height="4rem" width="auto" bg="white" ml="10px">
+                  <Image src={VsCodeIcon} width="40" />
+                </Button>
+              </Tooltip>
+              <Tooltip hasArrow label="IntelliJ IDEA From 2022 - Present" placement="bottom" borderRadius="1rem">
+                <Button mt="1rem" borderRadius="50%" height="4rem" width="auto" bg="white" ml="10px">
+                  <Image src={IntellijIcon} width="40" />
                 </Button>
               </Tooltip>
             </Box>
