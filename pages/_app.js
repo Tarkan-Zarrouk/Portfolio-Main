@@ -1,6 +1,6 @@
 // pages/_app.js or pages/_app.tsx
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
-import theme from "./theme";
+import theme from "../theme/theme";
 
 function MyApp({ Component, pageProps }) {
   return (

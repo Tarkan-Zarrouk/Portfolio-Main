@@ -1,5 +1,5 @@
 import { Box, Button, ButtonGroup, Flex, SimpleGrid, Stack, Text, Tooltip } from "@chakra-ui/react";
-import NavigationMenu from "./components/NavigationMenu";
+import NavigationMenu from "../components/NavigationMenu";
 import { MdOutlinePerson } from "react-icons/md";
 import { IoMail } from "react-icons/io5";
 import Link from "next/link";
@@ -19,7 +19,7 @@ import PopOsIcon from "@/public/popos_icon.png";
 import MacIosOS from "@/public/macosios_icon.png";
 import VsCodeIcon from "@/public/vscode_icon.png";
 import IntellijIcon from "@/public/intellij_icon.png";
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "../components/ScrollToTop";
 
 
 export default function Home() {
