@@ -77,17 +77,16 @@ export default function NavigationMenu() {
                 />
             </Flex>
 
-            <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
+            <Drawer placement="right" onClose={onClose} size="full" isOpen={isOpen}>
                 <DrawerOverlay />
                 <DrawerContent>
                     <DrawerCloseButton />
                     <DrawerHeader>Checkout Below!</DrawerHeader>
-                    <DrawerBody>
+                    <DrawerBody textAlign="center" mx="auto">
                         <Link display="block" mb="10px" onClick={() => { router.push("/"); onClose(); }}>Home</Link>
                         <Link display="block" mb="10px" onClick={() => { router.push("/skills"); onClose(); }}>Skills</Link>
                         <Link display="block" mb="10px" onClick={() => { router.push("/certifications"); onClose(); }}>Certifications</Link>
                         <HStack>
-                            <Flex gap="33.33%" justifyContent="space-around" justify="space-around">
                                 <Link href="https://www.github.com/LarryTheFatCat">
                                     <Button>
                                         <FaGithub />
@@ -103,7 +102,6 @@ export default function NavigationMenu() {
                                         <FaStackOverflow />
                                     </Button>
                                 </Link>
-                            </Flex>
                         </HStack>
                     </DrawerBody>
                 </DrawerContent>
