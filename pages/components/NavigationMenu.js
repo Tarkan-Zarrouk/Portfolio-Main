@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
     Box,
     Flex,
@@ -35,15 +35,13 @@ export default function NavigationMenu() {
                     />
                 </Box>
                 <Spacer />
-                <Box
-                    display={["none", "flex", "flex"]}
-                >
-                    <Link mr="40px">
+                <Box display={["none", "flex", "flex"]}>
+                    <Link href="#section1" mr="40px">
                         <Text fontSize={["sm", "lg"]} color="#7e9199">
                             Home
                         </Text>
                     </Link>
-                    <Link mr="40px">
+                    <Link href="#section2" mr="40px">
                         <Text fontSize={["sm", "lg"]} color="#7e9199">
                             Skills
                         </Text>
@@ -54,8 +52,8 @@ export default function NavigationMenu() {
                         <HamburgerIcon />
                     </MenuButton>
                     <MenuList>
-                        <MenuItem>Home</MenuItem>
-                        <MenuItem>Skills</MenuItem>
+                        <MenuItem href="#section1">Home</MenuItem>
+                        <MenuItem href="#section2">Skills</MenuItem>
                     </MenuList>
                 </Menu>
             </Flex>

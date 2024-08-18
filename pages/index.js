@@ -32,6 +32,7 @@ export default function Home() {
         alignItems="center"
         justifyContent="center"
         p={4}
+        id="section1"
       >
         <Box textAlign="center">
           <Text fontSize="4xl" fontWeight="bold">
@@ -58,7 +59,7 @@ export default function Home() {
           </ButtonGroup>
         </Box>
       </Flex>
-      <Box px={["1rem", "2rem", "5rem"]}>
+      <Box id="section2" px={["1rem", "2rem", "5rem"]}>
         <Text as="b" fontSize="3xl">
           Skills
         </Text>
