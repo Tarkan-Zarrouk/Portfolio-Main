@@ -19,12 +19,14 @@ import PopOsIcon from "@/public/popos_icon.png";
 import MacIosOS from "@/public/macosios_icon.png";
 import VsCodeIcon from "@/public/vscode_icon.png";
 import IntellijIcon from "@/public/intellij_icon.png";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 export default function Home() {
   return (
     <>
       <NavigationMenu />
+      <ScrollToTop />
       <Flex
         height="75vh"
         alignItems="center"
@@ -61,7 +63,7 @@ export default function Home() {
           Skills
         </Text>
         <Box>
-          <SimpleGrid minChildWidth='320px' spacing='40px'>
+          <SimpleGrid pb="10rem" minChildWidth='320px' spacing='40px'>
             <Box pl="1rem">
               <Text as="b" fontSize="2xl" textDecor="underline">
                 Languages
