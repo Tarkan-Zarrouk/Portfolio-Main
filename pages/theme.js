@@ -1,4 +1,4 @@
-// theme.js or theme.ts
+// src/theme.js or src/theme.ts
 import { extendTheme } from "@chakra-ui/react";
 
 const config = {
