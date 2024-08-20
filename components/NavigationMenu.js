@@ -58,8 +58,16 @@ export default function NavigationMenu() {
                         <HamburgerIcon />
                     </MenuButton>
                     <MenuList>
-                        <MenuItem href="#section1">Home</MenuItem>
-                        <MenuItem href="#section2">Skills</MenuItem>
+                        <Link href="#section1">
+                            <MenuItem>
+                                Home
+                            </MenuItem>
+                        </Link>
+                        <Link href="#section2">
+                            <MenuItem>
+                                Skills
+                            </MenuItem>
+                        </Link>
                     </MenuList>
                 </Menu>
             </Flex>
