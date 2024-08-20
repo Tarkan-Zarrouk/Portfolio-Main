@@ -18,7 +18,13 @@ import Image from "next/image";
 export default function NavigationMenu() {
 
     return (
-        <div>
+        <Box
+            position="fixed"
+            top="0"
+            left="0"
+            right="0"
+            zIndex="1000"
+        >
             <Flex
                 px={["0rem", "2rem", "5rem"]}
                 py={["0rem", "1.5rem", "2rem"]}
@@ -57,6 +63,6 @@ export default function NavigationMenu() {
                     </MenuList>
                 </Menu>
             </Flex>
-        </div>
+        </Box>
     );
 }
