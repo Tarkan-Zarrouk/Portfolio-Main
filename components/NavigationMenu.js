@@ -52,6 +52,11 @@ export default function NavigationMenu() {
                             Skills
                         </Text>
                     </Link>
+                    <Link href="#section3" mr="40px">
+                        <Text fontSize={["sm", "lg"]} color="#7e9199">
+                            Projects
+                        </Text>
+                    </Link>
                 </Box>
                 <Menu>
                     <MenuButton display={["flex", "none", "none", "none"]}>
@@ -66,6 +71,11 @@ export default function NavigationMenu() {
                         <Link href="#section2">
                             <MenuItem>
                                 Skills
+                            </MenuItem>
+                        </Link>
+                        <Link href="#section3">
+                            <MenuItem>
+                                Projects
                             </MenuItem>
                         </Link>
                     </MenuList>
