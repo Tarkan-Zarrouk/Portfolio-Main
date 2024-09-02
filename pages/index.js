@@ -21,24 +21,36 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import Link from "next/link";
 import ScrollToTop from "../components/ScrollToTop";
 import LanguagesAndTools from "../components/LanguagesAndTools";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [1, 2, 3, 4, 5, 6].map(num => `/Preview_${num}.png`);
 
-  const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const maxCardWidth = "50rem";
   const imageHeight = useBreakpointValue({ base: "200px", md: "300px", lg: "400px" });
   const fontSize = useBreakpointValue({ base: "3xl", md: "4xl" });
   const skillsFontSize = useBreakpointValue({ base: "2xl", md: "3xl" });
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsAnimating(false), 500);
+    return () => clearTimeout(timer);
+  }, [currentImageIndex]);
+
+  const changeImage = (direction) => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentImageIndex((prevIndex) => {
+      if (direction === 'next') {
+        return (prevIndex + 1) % images.length;
+      } else {
+        return (prevIndex - 1 + images.length) % images.length;
+      }
+    });
+  };
 
   return (
     <Box maxWidth="100vw" overflowX="hidden"> {/* Add this wrapper */}
@@ -98,16 +110,27 @@ export default function Home() {
             <Card maxW={maxCardWidth} w="100%">
               <CardHeader position="relative" h={imageHeight}>
                 <Box position="relative" w="100%" h="100%">
-                  <Image
-                    src={images[currentImageIndex]}
-                    alt={`Preview ${currentImageIndex + 1}`}
-                    layout="fill"
-                    objectFit="cover"
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.src = "/placeholder.png";
-                    }}
-                  />
+                  <AnimatePresence initial={false}>
+                    <motion.div
+                      key={currentImageIndex}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                      style={{ position: 'absolute', width: '100%', height: '100%' }}
+                    >
+                      <Image
+                        src={images[currentImageIndex]}
+                        alt={`Preview ${currentImageIndex + 1}`}
+                        layout="fill"
+                        objectFit="cover"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = "/placeholder.png";
+                        }}
+                      />
+                    </motion.div>
+                  </AnimatePresence>
                 </Box>
                 <IconButton
                   icon={<ChevronLeftIcon />}
@@ -116,9 +139,10 @@ export default function Home() {
                   bg="black"
                   top="50%"
                   transform="translateY(-50%)"
-                  onClick={prevImage}
+                  onClick={() => changeImage('prev')}
                   aria-label="Previous image"
                   zIndex="1"
+                  isDisabled={isAnimating}
                 />
                 <IconButton
                   icon={<ChevronRightIcon />}
@@ -127,9 +151,10 @@ export default function Home() {
                   bg="black"
                   top="50%"
                   transform="translateY(-50%)"
-                  onClick={nextImage}
+                  onClick={() => changeImage('next')}
                   aria-label="Next image"
                   zIndex="1"
+                  isDisabled={isAnimating}
                 />
                 <Link href="https://www.github.com/larrythefatcat/blogging-platform">
                   <Button bg="lightGreen" color="black">
